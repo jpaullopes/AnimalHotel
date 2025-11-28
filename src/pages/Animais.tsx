@@ -10,7 +10,7 @@ interface AnimalProps {
   raca: string;
   idade: number;
   status: string;
-  tutorId: number;
+  tutorId: string;
   tutor?: {
     nome: string;
   };
@@ -38,7 +38,7 @@ export function Animais() {
         // Junta cada animal com seu tutor
         const animaisComTutor = animaisData.map((animal: AnimalProps) => ({
           ...animal,
-          tutor: tutoresData.find((t: { id: string }) => t.id === String(animal.tutorId))
+          tutor: tutoresData.find((t: { id: string }) => t.id === animal.tutorId)
         }));
         setAnimals(animaisComTutor);
         setLoading(false);
