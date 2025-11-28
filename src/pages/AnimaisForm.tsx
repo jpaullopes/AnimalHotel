@@ -22,7 +22,7 @@ export function AnimaisForm() {
 
   // Carrega a lista de tutores
   useEffect(() => {
-    fetch('http://localhost:3000/tutors')
+    fetch('https://backend-animalhotels.onrender.com/tutors')
       .then(r => r.json())
       .then(data => {
         setTutores(data);
@@ -35,7 +35,7 @@ export function AnimaisForm() {
   // Se for edição, carrega os dados do animal
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/animals/${id}`)
+      fetch(`https://backend-animalhotels.onrender.com/animals/${id}`)
         .then(r => r.json())
         .then(data => {
           setNome(data.nome);
@@ -55,7 +55,7 @@ export function AnimaisForm() {
     const animal = { nome, especie, raca, status, tutorId, idade};
 
     // Se tem ID é edição (PUT), senão é criação (POST)
-    await fetch(id ? `http://localhost:3000/animals/${id}` : 'http://localhost:3000/animals', {
+    await fetch(id ? `https://backend-animalhotels.onrender.com/animals/${id}` : 'https://backend-animalhotels.onrender.com/animals', {
       method: id ? 'PUT' : 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(animal),

@@ -17,7 +17,7 @@ export function Login() {
 
     try {
       // Busca usuário no banco
-      const response = await fetch(`http://localhost:3000/users?email=${email}&password=${senha}`);
+      const response = await fetch(`https://backend-animalhotels.onrender.com/users?email=${email}&password=${senha}`);
       const users = await response.json();
 
       if (users.length > 0) {

@@ -23,7 +23,7 @@ export function Cadastro() {
 
     try {
       // Verifica se email já existe
-      const check = await fetch(`http://localhost:3000/users?email=${email}`);
+      const check = await fetch(`https://backend-animalhotels.onrender.com/users?email=${email}`);
       const existe = await check.json();
 
       if (existe.length > 0) {
@@ -33,7 +33,7 @@ export function Cadastro() {
       }
 
       // Cria usuário
-      await fetch('http://localhost:3000/users', {
+      await fetch('https://backend-animalhotels.onrender.com/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: nome, email, password: senha }),

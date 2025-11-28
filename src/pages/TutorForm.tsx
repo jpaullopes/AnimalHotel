@@ -15,7 +15,7 @@ export function TutorForm() {
   // Se for edição, carrega os dados do tutor
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/tutors/${id}`)
+      fetch(`https://backend-animalhotels.onrender.com/tutors/${id}`)
         .then(r => r.json())
         .then(data => {
           setNome(data.nome);
@@ -38,7 +38,7 @@ export function TutorForm() {
 
     try {
       // Se tem ID é edição (PUT), senão é criação (POST)
-      await fetch(id ? `http://localhost:3000/tutors/${id}` : 'http://localhost:3000/tutors', {
+      await fetch(id ? `https://backend-animalhotels.onrender.com/tutors/${id}` : 'https://backend-animalhotels.onrender.com/tutors', {
         method: id ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, email, telefone }),

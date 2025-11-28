@@ -24,15 +24,15 @@ export function Animais() {
   // Função para excluir um animal
   const handleDelete = async (id: number) => {
     if (!confirm('Tem certeza?')) return;
-    await fetch(`http://localhost:3000/animals/${id}`, { method: 'DELETE' });
+    await fetch(`https://backend-animalhotels.onrender.com/animals/${id}`, { method: 'DELETE' });
     setAnimals(animals.filter(a => a.id !== id));
   };
 
   // Carrega os animais quando a página abre
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:3000/animals').then(r => r.json()),
-      fetch('http://localhost:3000/tutors').then(r => r.json())
+      fetch('https://backend-animalhotels.onrender.com/animals').then(r => r.json()),
+      fetch('https://backend-animalhotels.onrender.com/tutors').then(r => r.json())
     ])
       .then(([animaisData, tutoresData]) => {
         // Junta cada animal com seu tutor

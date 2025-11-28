@@ -19,19 +19,19 @@ export function Tutores() {
     if (!confirm('Excluir tutor?')) return;
     
     // Primeiro deleta os animais do tutor
-    const animals = await fetch(`http://localhost:3000/animals?tutorId=${id}`).then(r => r.json());
+    const animals = await fetch(`https://backend-animalhotels.onrender.com/animals?tutorId=${id}`).then(r => r.json());
     for (const animal of animals) {
-      await fetch(`http://localhost:3000/animals/${animal.id}`, { method: 'DELETE' });
+      await fetch(`https://backend-animalhotels.onrender.com/animals/${animal.id}`, { method: 'DELETE' });
     }
     
     // Depois deleta o tutor
-    await fetch(`http://localhost:3000/tutors/${id}`, { method: 'DELETE' });
+    await fetch(`https://backend-animalhotels.onrender.com/tutors/${id}`, { method: 'DELETE' });
     setTutors(tutors.filter(t => t.id !== id));
   };
 
   // Carrega os tutores quando a página abre
   useEffect(() => {
-    fetch('http://localhost:3000/tutors')
+    fetch('https://backend-animalhotels.onrender.com/tutors')
       .then(r => r.json())
       .then(dados => setTutors(dados));
   }, []);
