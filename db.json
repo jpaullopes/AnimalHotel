@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "id": "786a",
+      "name": "Rogerin",
+      "email": "rogerinDoGrau@gmail.com",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": "294c",
+      "name": "Teste1📍",
+      "email": "rogerio@gmail.com",
+      "password": "3333",
+      "role": "user"
+    },
+    {
+      "id": "5984",
+      "name": "Teste2 (Repetição de cliques)",
+      "email": "Teste2@gmail.com",
+      "password": "1",
+      "role": "user"
+    },
+    {
+      "id": "2c73",
+      "name": "Teste2 (Repetição de cliques)",
+      "email": "Teste2@gmail.com",
+      "password": "1",
+      "role": "user"
+    },
+    {
+      "id": "c79e",
+      "name": "Teste2 (Repetição de cliques)",
+      "email": "Teste2@gmail.com",
+      "password": "1",
+      "role": "user"
+    },
+    {
+      "id": "f9a9",
+      "name": "1",
+      "email": "1@1",
+      "password": "1",
+      "role": "user"
+    },
+    {
+      "id": "3d26",
+      "name": "2",
+      "email": "2@2",
+      "password": "2",
+      "role": "user"
+    },
+    {
+      "id": "296c",
+      "name": "Álvaro Pietro",
+      "email": "OMaisLindoDoIFPI@gmail.com",
+      "password": "999999",
+      "role": "user"
+    },
+    {
+      "id": "3aac",
+      "name": "Joça",
+      "email": "4@gmail.com",
+      "password": "101010",
+      "role": "user"
+    },
+    {
+      "id": "e7f4",
+      "name": "pedro",
+      "email": "P@gmail.com",
+      "password": "123466",
+      "role": "user"
+    },
+    {
+      "id": "174f",
+      "name": "dasdasdasdasdas",
+      "email": "oliaaaaa@gmail.com",
+      "password": "1111111111111",
+      "role": "user"
+    },
+    {
+      "id": "0c8c",
+      "name": "karol com C",
+      "email": "roger@gmail.com",
+      "password": "123499",
+      "role": "user"
+    },
+    {
+      "id": "87c2",
+      "name": "Henind",
+      "email": "olaaaaaa@gmail.com",
+      "password": "1111111111111",
+      "role": "user"
+    },
+    {
+      "id": "b798",
+      "name": "catalão roberto figuereido",
+      "email": "lembra@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "73bf",
+      "name": "Juliao",
+      "email": "Juju@gmail.com",
+      "password": "99999999999",
+      "role": "user"
+    }
+  ],
+  "tutors": [
+    {
+      "nome": "Álvaro",
+      "email": "oliaaaaaaa@gmail.com",
+      "telefone": "(11) 92222-5555",
+      "id": "f4b3"
+    },
+    {
+      "id": "baf7",
+      "nome": "João Paulo",
+      "email": "123@gmail.com",
+      "telefone": "(87) 88888-8888"
+    },
+    {
+      "id": "8d79",
+      "nome": "Ana Santos",
+      "email": "ana@email.com",
+      "telefone": "99999-2233"
+    }
+  ],
+  "animals": [
+    {
+      "id": "5dbe",
+      "nome": "dasdasdasd",
+      "especie": "Cachorro",
+      "raca": "dsadasd",
+      "status": "Aguardando",
+      "tutorId": "f4b3",
+      "idade": 3
+    },
+    {
+      "id": "4b43",
+      "nome": "saudghnv hgouiahsgbnf9uiasyhbniucvahiufnyremiou",
+      "especie": "Cachorro",
+      "raca": "SA CFOAUHSNFMCAIughnsyc if",
+      "status": "Aguardando",
+      "tutorId": "a7ad",
+      "idade": 2
+    },
+    {
+      "id": "3fa2",
+      "nome": "11111111111111111111111111111111111111111111111111",
+      "especie": "Cachorro",
+      "raca": "3213123123",
+      "status": "Aguardando",
+      "tutorId": "f4b3",
+      "idade": 50
+    },
+    {
+      "id": "95bc",
+      "nome": "<img src=\"x\" onerror=\"alert('XSS')\">",
+      "especie": "Cachorro",
+      "raca": "<img src=\"x\" onerror=\"alert('X",
+      "status": "Aguardando",
+      "tutorId": "f4b3",
+      "idade": 12
+    }
+  ]
+}
