@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import { Header } from "./components/Header"
 import { PrivateRoute } from "./components/PrivateRoute"
-import { Home } from "./pages/ Home"
+import { Home } from "./pages/Home"
 import { Tutores } from "./pages/Tutores"
 import { TutorForm } from "./pages/TutorForm"
 import { Animais } from "./pages/Animais"
