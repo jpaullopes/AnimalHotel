@@ -1,73 +1,135 @@
-# React + TypeScript + Vite
+# Animal Hotels
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **"Airbnb" para seus pets**. Sistema de gerenciamento de tutores e hospedagem de animais.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o Projeto
 
-## React Compiler
+Este projeto foi desenvolvido como atividade da disciplina **Programação para Internet II** (Prof. Rogério Silva), do curso de **Análise e Desenvolvimento de Sistemas – IFPI**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O objetivo foi criar uma **Single Page Application (SPA)** robusta utilizando **React**, aplicando conceitos de:
 
-## Expanding the ESLint configuration
+* Componentização e Hooks
+* Consumo de API REST (Json-Server)
+* Roteamento (React Router Dom)
+* Formulários com validações complexas
+* Prevenção de erros comuns (Race Conditions)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Autenticação e Usuários
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **Cadastro de Usuário** com validação de domínio de e-mail
+* **Login** com verificação simulada
+* **Prevenção de múltiplos cliques** (Race Condition)
+
+### Gestão de Tutores
+
+* **Listagem** de todos os tutores
+* **Cadastro** com:
+
+  * Validação de telefone
+  * Validação de nome (sem números ou caracteres especiais)
+  * Domínios de e-mail permitidos
+
+### Gestão de Animais
+
+* **Listagem** com cards estilizados
+* **Relacionamento automático** do animal com tutor
+* **Cadastro/Edição** com:
+
+  * Validação de raça
+  * Limite de caracteres
+  * Controle de status (Aguardando, Hospedado, Finalizado)
+
+---
+
+## Tecnologias Utilizadas
+
+* **React + Vite**: Core da aplicação.
+* **TypeScript**: Tipagem estática para maior segurança.
+* **Tailwind CSS**: Estilização utilitária e responsiva.
+* **Json-server**: Simulação de API REST completa.
+* **React Router DOM**: Navegação entre páginas.
+
+---
+
+## Deploy
+
+* **Frontend (GitHub Pages):** [https://jpaullopes.github.io/AnimalHotel/](https://jpaullopes.github.io/AnimalHotel/)
+* **Backend API (Render):** [https://backend-animalhotels.onrender.com](https://backend-animalhotels.onrender.com)
+
+> *Nota:* O backend no Render pode demorar até 1 minuto na primeira requisição.
+
+---
+
+## Como rodar o projeto localmente
+
+### Pré-requisitos
+
+* Node.js instalado
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/jpaullopes/AnimalHotel.git
+cd AnimalHotel
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instale as dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Inicie o Servidor (API Fake)
+
+```bash
+npm run server
+```
+
+### 4. Inicie o Frontend
+
+```bash
+npm run dev
+```
+
+Acesse: **[http://localhost:5173](http://localhost:5173)**
+
+---
+
+## Estrutura de Pastas
+
+```
+src/
+├── components/   # Componentes reutilizáveis (Header, TutorCard, etc.)
+├── pages/        # Páginas da aplicação (Home, Login, Animais, Tutores, etc.)
+└── App.tsx       # Configuração de Rotas
+```
+
+---
+
+## Autores
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/PietroDev-01">
+<img src="https://avatars.githubusercontent.com/PietroDev-01" width="100px;"/>
+<br />
+<sub><b>Álvaro Pietro</b></sub>
+</a>
+</td>
+
+<td align="center">
+<a href="https://github.com/jpaullopes">
+<img src="https://avatars.githubusercontent.com/jpaullopes" width="100px;"/>
+<br />
+<sub><b>João Paulo</b></sub>
+</a>
+</td>
+</tr>
+</table>
