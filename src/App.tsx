@@ -14,16 +14,12 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       
-      {/* Cabeçalho com navegação */}
       <Header />
 
       <main className="max-w-6xl mx-auto p-8">
         <Routes>
-          {/* Rotas públicas */}
           <Route path="/" element={<Login />}></Route>
           <Route path="/cadastro" element={<Cadastro />}></Route>
-          
-          {/* Rotas protegidas - precisa estar logado */}
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>}></Route>
           <Route path="/animais" element={<PrivateRoute><Animais /></PrivateRoute>}></Route> 
           <Route path="/animais/cadastro" element={<PrivateRoute><AnimaisForm /></PrivateRoute>}></Route>
