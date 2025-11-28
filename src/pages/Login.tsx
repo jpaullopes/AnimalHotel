@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { validarEmail } from '../utils/validacao';
 
 // Página de login
 export function Login() {
@@ -14,6 +15,12 @@ export function Login() {
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setErro('');
+
+    // Valida email antes de enviar
+    if (!validarEmail(email)) {
+      setErro('Email inválido');
+      return;
+    }
 
     try {
       // Busca usuário no banco

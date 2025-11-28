@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
+import { validarEmail, validarNome, validarTelefone } from '../utils/validacao';
 
 // Formulário para cadastrar ou editar tutor
 export function TutorForm() {
@@ -30,9 +31,19 @@ export function TutorForm() {
     e.preventDefault();
     setErro('');
 
-    // Validação simples
-    if (nome.length < 2) {
-      setErro('Nome muito curto');
+    // Validações
+    if (!validarNome(nome)) {
+      setErro('Nome inválido (não pode conter números)');
+      return;
+    }
+
+    if (!validarEmail(email)) {
+      setErro('Email inválido');
+      return;
+    }
+
+    if (!validarTelefone(telefone)) {
+      setErro('Telefone inválido (deve ter 10 ou 11 dígitos)');
       return;
     }
 

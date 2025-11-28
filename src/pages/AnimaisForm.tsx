@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
+import { validarNome } from '../utils/validacao';
 
 interface Tutor {
   id: string;
@@ -19,6 +20,7 @@ export function AnimaisForm() {
   const [tutorId, setTutorId] = useState('');
   const [idade, setIdade] = useState<number | string>('');
   const [tutores, setTutores] = useState<Tutor[]>([]);
+  const [erro, setErro] = useState('');
 
   // Carrega a lista de tutores
   useEffect(() => {
@@ -51,6 +53,18 @@ export function AnimaisForm() {
   // Função que salva o animal
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setErro('');
+
+    // Validações
+    if (!validarNome(nome)) {
+      setErro('Nome inválido (não pode conter números)');
+      return;
+    }
+
+    if (!validarNome(raca)) {
+      setErro('Raça inválida (não pode conter números)');
+      return;
+    }
 
     const animal = { nome, especie, raca, status, tutorId, idade};
 
@@ -69,6 +83,8 @@ export function AnimaisForm() {
       <h2 className="text-xl font-bold mb-4">{id ? 'Editar' : 'Novo'} Animal</h2>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        
+        {erro && <p className="text-red-500 text-sm">{erro}</p>}
         
         <div>
           <label className="block mb-1">Nome</label>

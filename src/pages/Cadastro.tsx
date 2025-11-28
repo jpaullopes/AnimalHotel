@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { validarEmail, validarNome, validarSenha } from '../utils/validacao';
 
 export function Cadastro() {
   const navigate = useNavigate();
@@ -13,8 +14,18 @@ export function Cadastro() {
     e.preventDefault();
     setErro('');
 
-    // Validação simples
-    if (senha.length < 6) {
+    // Validações
+    if (!validarNome(nome)) {
+      setErro('Nome inválido (não pode conter números)');
+      return;
+    }
+
+    if (!validarEmail(email)) {
+      setErro('Email inválido');
+      return;
+    }
+
+    if (!validarSenha(senha)) {
       setErro('A senha deve ter pelo menos 6 caracteres');
       return;
     }
